@@ -1,5 +1,6 @@
 package integration;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.ex.ElementNotFound;
 import org.junit.Before;
@@ -26,6 +27,19 @@ public class SelectsTest extends IntegrationTest {
     select.getSelectedOption().shouldBe(selected);
     assertEquals("myrambler.ru", select.getSelectedValue());
     assertEquals("@myrambler.ru", select.getSelectedText());
+  }
+
+
+  @Test
+  public void userCanSelectValueUsingSetValue() {
+    Configuration.useSetValueForSelect = true;
+    SelenideElement select = $(By.xpath("//select[@name='domain']"));
+    select.setValue("myrambler.ru");
+
+    select.getSelectedOption().shouldBe(selected);
+    assertEquals("myrambler.ru", select.getSelectedValue());
+    assertEquals("@myrambler.ru", select.getSelectedText());
+    Configuration.useSetValueForSelect = false;
   }
 
   @Test

@@ -269,6 +269,24 @@ public class Configuration {
   public static boolean fastSetValue = Boolean.parseBoolean(System.getProperty("selenide.fastSetValue", "false"));
 
   /**
+   * If set to true, 'setValue' and 'val' methods of SelenideElement working as 'selectOptionByValue'.
+   *
+   * https://github.com/codeborne/selenide/issues/508
+   * Can be configured either programmatically or by system property "-Dsselenide.setValueForSelect=true".
+   * Default value: false
+   */
+  public static boolean useSetValueForSelect = Boolean.parseBoolean(System.getProperty("selenide.useSetValueForSelect", "false"));
+
+  /**
+   * If set to true, 'setValue' and 'val' methods of SelenideElement working as 'selectRadio'.<br>
+   *
+   * https://github.com/codeborne/selenide/issues/508<br>
+   * Can be configured either programmatically or by system property "-Dsselenide.setValueForRadio=true".
+   * Default value: false<
+   */
+  public static boolean useSetValueForRadio = Boolean.parseBoolean(System.getProperty("selenide.useSetValueForRadio", "false"));
+
+  /**
    * Choose how Selenide should retrieve web elements: using default CSS or Sizzle (CSS3)
    */
   public static SelectorMode selectorMode = CSS;

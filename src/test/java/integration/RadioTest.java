@@ -1,5 +1,6 @@
 package integration;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ex.ElementNotFound;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,8 +31,10 @@ public class RadioTest extends IntegrationTest {
 
   @Test
   public void userCanSelectRadioButtonUsingSetValue() {
+    Configuration.useSetValueForRadio = true;
     $(By.name("me")).setValue("margarita");
     assertEquals("margarita", getSelectedRadio(By.name("me")).val());
+    Configuration.useSetValueForRadio = false;
   }
 
   @Test
