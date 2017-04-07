@@ -88,6 +88,10 @@ public class Commands {
     add("$$", new FindAll());
     add("closest", new GetClosest());
     add("parent", new GetParent());
+    add("firstChild", new GetFirstChild());
+    add("lastChild", new GetLastChild());
+    add("followingSibling", new GetFollowingSibling());
+    add("precedingSibling", new GetPrecedingSibling());
   }
 
   private void addKeyboardCommands() {

@@ -383,6 +383,47 @@ public interface SelenideElement extends WebElement, FindsByLinkText, FindsById,
   SelenideElement parent();
 
   /**
+   * Get first child element of of this element
+   * ATTENTION! This method doesn't start any search yet!
+   * For example, $("td").firstChild() could give some "tr".
+   * @return First child element
+   *
+   * @see com.codeborne.selenide.commands.GetFirstChild
+   */
+  SelenideElement firstChild();
+
+  /**
+   * Get last child element of of this element
+   * ATTENTION! This method doesn't start any search yet!
+   * For example, $("td").lastChild() could give some "tr".
+   * @return Last child element
+   *
+   * @see com.codeborne.selenide.commands.GetLastChild
+   */
+  SelenideElement lastChild();
+
+  /**
+   * Get following sibling element of of this element
+   * ATTENTION! This method doesn't start any search yet!
+   * For example, $("td").followingSibling() could give some "tr".
+   * @return Following sibling element
+   *
+   * @see com.codeborne.selenide.commands.GetFollowingSibling
+   */
+  SelenideElement followingSibling();
+
+  /**
+   * Get preceding sibling element of of this element
+   * ATTENTION! This method doesn't start any search yet!
+   * For example, $("td").precedingSibling() could give some "tr".
+   * @return Preceding sibling element
+   *
+   * @see com.codeborne.selenide.commands.GetPrecedingSibling
+   */
+  SelenideElement precedingSibling();
+
+
+  /**
    * Locates closes ancestor element matching given criteria
    * ATTENTION! This method doesn't start any search yet!
    * For example, $("td").closest("table") could give some "table".
